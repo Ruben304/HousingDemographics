@@ -14,6 +14,6 @@ corr_matrix = numerical_data.corr()
 
 # Plotting the correlation matrix as a heatmap
 plt.figure(figsize=(12, 8))
-sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt=".2f")
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt=".6f", vmin=0, vmax=0.05)
 plt.title('Correlation Matrix')
 plt.show()
