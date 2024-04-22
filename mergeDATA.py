@@ -1,26 +1,22 @@
 import pandas as pd
 
 # Load datasets
-housing_data = pd.read_csv('../Datasets/housing/housing_data_growth.csv')
-census_data = pd.read_csv('../Datasets/census/data-clean/census-2022.csv')
+housing_data = pd.read_csv('Datasets/housing/final_housing_data.csv')
+census_data = pd.read_csv('Datasets/census/combined-datasets/census-drifts-final.csv')
 
-# Inspecting the data
-print(housing_data.head())
-print(census_data.head())
-
-# Assuming 'zipcode' is the common column
-# Ensure that the 'zipcode' column is the same data type in both dataframes
+# Before merging, ensure that the 'Zipcode' and 'GEOGRAPHY' columns are of the same data type
 housing_data['Zipcode'] = housing_data['Zipcode'].astype(str)
 census_data['GEOGRAPHY'] = census_data['GEOGRAPHY'].astype(str)
 
-# Merge datasets on 'zipcode' and 'Geography'
-merged_data = pd.merge(housing_data, census_data, left_on='Zipcode', right_on='GEOGRAPHY', how='inner')
+# Also ensure the 'Year' columns in both datasets are of the same data type
+housing_data['Year'] = housing_data['Year'].astype(int)
+census_data['YEAR'] = census_data['YEAR'].astype(int)
 
-# Optional: Drop the 'Geography' column if it's redundant after merging
-merged_data.drop('GEOGRAPHY', axis=1, inplace=True)
+# Merge the datasets on both 'Zipcode'/'GEOGRAPHY' and 'Year'/'YEAR'
+merged_data = pd.merge(housing_data, census_data, left_on=['Zipcode', 'Year'], right_on=['GEOGRAPHY', 'YEAR'])
 
-# Save the merged data to a new CSV file, if needed
-merged_data.to_csv('merged_dataset.csv', index=False)
+# Save the merged dataset to a new CSV
+merged_data.to_csv('merged_data.csv', index=False)
 
-# Display the first few rows of the merged dataset to verify
+# Verify the merged data
 print(merged_data.head())
