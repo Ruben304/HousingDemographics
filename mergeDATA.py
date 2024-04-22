@@ -5,8 +5,8 @@ housing_data = pd.read_csv('Datasets/housing/final_housing_data.csv')
 census_data = pd.read_csv('Datasets/census/combined-datasets/census-drifts-final.csv')
 
 # Before merging, ensure that the 'Zipcode' and 'GEOGRAPHY' columns are of the same data type
-housing_data['Zipcode'] = housing_data['Zipcode'].astype(str)
-census_data['GEOGRAPHY'] = census_data['GEOGRAPHY'].astype(str)
+housing_data['Zipcode'] = housing_data['Zipcode'].astype(str).str.zfill(5)
+census_data['GEOGRAPHY'] = census_data['GEOGRAPHY'].astype(str).str.zfill(5)
 
 # Also ensure the 'Year' columns in both datasets are of the same data type
 housing_data['Year'] = housing_data['Year'].astype(int)
