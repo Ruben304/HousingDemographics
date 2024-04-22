@@ -18,6 +18,8 @@ merged_data = pd.merge(housing_data, census_data, left_on=['Zipcode', 'Year'], r
 # Drop the extra columns
 merged_data = merged_data.drop(['GEOGRAPHY', 'YEAR'], axis=1)
 
+merged_data = merged_data[~merged_data.astype(str).eq('#DIV/0!').any(axis=1)]
+
 # Save the merged dataset to a new CSV
 merged_data.to_csv('merged_data.csv', index=False)
 
