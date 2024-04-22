@@ -15,6 +15,9 @@ census_data['YEAR'] = census_data['YEAR'].astype(int)
 # Merge the datasets on both 'Zipcode'/'GEOGRAPHY' and 'Year'/'YEAR'
 merged_data = pd.merge(housing_data, census_data, left_on=['Zipcode', 'Year'], right_on=['GEOGRAPHY', 'YEAR'])
 
+# Drop the extra columns
+merged_data = merged_data.drop(['GEOGRAPHY', 'YEAR'], axis=1)
+
 # Save the merged dataset to a new CSV
 merged_data.to_csv('merged_data.csv', index=False)
 
