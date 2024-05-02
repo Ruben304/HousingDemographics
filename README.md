@@ -25,7 +25,7 @@
 Most of our methods in preprocessing our data is located in the `data-helper-scripts` and `census-preprocess`directory or done in excel  directly
 
 ### Created Datasets 
-Our unqiue merged dataset for 
+Our unique merged dataset for 
 - Housing data found in `Datasets/combined/merged_data_housing.csv`
 - Renting data found in `Datasets/combined/merged_data_renting.csv`
 
@@ -54,14 +54,15 @@ Final features for this datasets are:
 - `feature-relation-analysis/clusters.py` illustrates a dendogram to see similar counties and identify any outliers
 
 #### Binary Classification
-
+- `binary/plots/binary-results-plotting.ipynb` visualizes the results of our binary classification model
+- `binary/binary-autogluon.ipynb` creation of the binary classificaiton using autogluon
+- `binary/binary-sklearn.ipynb` creation of the binary classificaiton using sklearn
 
 #### Regression Models
-
+- ``
 
 ### Activate vierual enviornment 
 - Run this in the root directory `./venv/Scripts/activate`
-
 
 ### Libraries used
 - pandas
