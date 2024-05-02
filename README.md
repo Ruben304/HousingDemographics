@@ -59,7 +59,8 @@ Final features for this datasets are:
 - `binary/binary-sklearn.ipynb` creation of the binary classificaiton using sklearn
 
 #### Regression Models
-- ``
+- `decimal/autogluon-scripts` creation of multiple regression predictions using autogluon
+- `decimal/skleanr-scripts` creation of multiple regression predictions using sklearn
 
 ### Activate vierual enviornment 
 - Run this in the root directory `./venv/Scripts/activate`
