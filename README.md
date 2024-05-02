@@ -11,6 +11,10 @@
 - Exploring Relationships: Analyzing the correlation between growth rates in the Housing and Renting Markets and demographic shifts in various counties across the United States
 - Predictive Modeling: Utilizing binary classification and regression models to forecast growth rates in the Housing Market based on demographic changes in respective counties
 
+## Conclusion
+- Our analysis using correlation and covariance matrices revealed minimal relationships between demographic shifts and growth rates across various counties
+- The binary classification and regression models, while partially effective, indicated that predicting housing rates based solely on demographic changes might be challenging
+
 ## Datasets Used
 ### Sourced Datasets 
 
@@ -25,12 +29,17 @@ Our unqiue merged dataset for
 - Housing data found in `Datasets/combined/merged_data_housing.csv`
 - Renting data found in `Datasets/combined/merged_data_renting.csv`
 
-Final features for our dataset are:
+Final features for these datasets are:
 
 | County   | GrowthRate    | White    | Black or African American  | American Indian or Alaskan Native  | Asian    | Hispanic or Latino | Native Hawaiian and Islander |
 | -------- |:-------------:|:--------:|:--------------------------:|:----------------------------------:|:--------:|:------------------:| ----------------------------:|
 
 Our binarized data based on the combined housing data, can be found in `binary\binary_dataset.csv`
+
+Final features for this datasets are:
+
+| GrowthRate    | White    | Black or African American  | American Indian or Alaskan Native  | Asian    | Hispanic or Latino | Native Hawaiian and Islander |
+| ------------- |:--------:|:--------------------------:|:----------------------------------:|:--------:|:------------------:| ----------------------------:|
 
 ### Data Analysis
 #### Covariance 
@@ -46,7 +55,8 @@ Our binarized data based on the combined housing data, can be found in `binary\b
 
 #### Binary Classification
 
-#### Repression Models
+
+#### Regression Models
 
 
 ### Activate vierual enviornment 
@@ -60,5 +70,9 @@ Our binarized data based on the combined housing data, can be found in `binary\b
 - seaborn
 - dash
 - matplotlib
+- autogluon
+
+### Presentation Slides
+- A pdf of our presentation slide can be found in `presentation-slides/EC503 Final Presentation.pdf`
 
 
